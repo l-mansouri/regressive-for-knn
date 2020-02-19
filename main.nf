@@ -279,7 +279,7 @@ process evaluation {
           file("*.avg_sp"), \
 	  file("*.pair_sp"), \
           file("*.avg_tc"), \
-          file("*.pair_tc") \
+          file("*.pair_tc"), \
 	  file("*.pairwise_identity")\
           into scores
 
