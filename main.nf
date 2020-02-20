@@ -34,7 +34,7 @@
  */
 
 // input sequences to align in fasta format
-params.seqs = "$baseDir/fam_**/*.allFASTAs.fasta"
+params.seqs = "$baseDir/fam_**/*_allFASTAs.fasta"
 
 // input reference sequences aligned in 
 params.refs = "$baseDir/fam_**/*_ref.vie"
@@ -91,7 +91,7 @@ log.info """\
 if ( params.seqs ) {
   Channel
   .fromPath(params.seqs)
-  .map { item -> [ item.simpleName, item] }
+  .map { item -> [ item.baseName.replace('_allFASTAs',''), item] }
   .into { seqs; seqs2; seqs3 }
 }
 
